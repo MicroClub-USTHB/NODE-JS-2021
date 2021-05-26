@@ -1,0 +1,20 @@
+{
+  "name": "my-first-project",
+  "version": "0.0.1",
+  "description": "this is our first project to initialise so we can learn node js together",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "1st-project",
+    "test"
+  ],
+  "author": "youcef (Node JS teacher)",
+  "license": "ISC",
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "emoji-dog": "^1.3.0"
+  }
+}
