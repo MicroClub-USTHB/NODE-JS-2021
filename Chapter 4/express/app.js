@@ -4,9 +4,7 @@ const express = require("express"),
 var n = 0;
 app.get("/", (req, res) => {
   n++;
-  res.send(
-    `<a href="https://classroom.google.com/c/MzQyNDM1MzczMjA4?cjc=uwaisxv">Classroom invite</a>`
-  );
+  res.send(`you requested this page ${n}`);
   //res.json({ rebot: "Meca" });
 });
 app.get("/animal", (req, res) => {
