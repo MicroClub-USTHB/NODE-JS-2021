@@ -1,9 +1,7 @@
-class Person {
-  name;
-  age;
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+function Person(name, age) {
+    return { name, age };
 }
-module.exports = Person;
+function animal(type, age) {
+    return { type, age };
+}
+module.exports = { Person, animal };

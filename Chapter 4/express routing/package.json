@@ -1,18 +1,19 @@
 {
-  "name": "express-routing",
-  "version": "1.0.0",
-  "description": "we gonna go through the express routing chapter",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "keywords": [
-    "nodejs",
-    "npm"
-  ],
-  "author": "ME",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "express-routing",
+    "version": "1.0.0",
+    "description": "we gonna go through the express routing chapter",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "keywords": [
+        "nodejs",
+        "npm"
+    ],
+    "author": "ME",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "morgan": "^1.10.0"
+    }
 }

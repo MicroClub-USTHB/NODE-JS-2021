@@ -1,0 +1,15 @@
+{
+    "name": "exercice1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "build": "react app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}

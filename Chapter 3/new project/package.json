@@ -1,0 +1,14 @@
+{
+    "name": "npm-test",
+    "version": "0.0.1",
+    "description": "The first test in npm",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cat-me": "^1.0.3"
+    }
+}
