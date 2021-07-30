@@ -1,0 +1,16 @@
+[
+    {
+        "First-name": "Youcef", // required
+        "Last-name": "Madadi",
+        "Age": 23
+    },
+    {
+        "First-name": "Youcef",
+        "Last-name": "Madadi"
+    },
+    {
+        "First-name": "Youcef",
+        "Last-name": "Madadi",
+        "Age": 23
+    }
+]

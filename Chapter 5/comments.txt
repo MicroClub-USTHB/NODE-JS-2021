@@ -1,0 +1,10 @@
+//NoSQL
+User 1 :
+first name , last name
+User 2 :
+First name , age
+
+// SQL 
+        first name ,  last name , age 
+user 1 : Youcef  , Madadi , NULL
+user 2 : Ihadjadan , NULL , 22
