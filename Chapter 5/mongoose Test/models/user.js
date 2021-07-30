@@ -6,6 +6,25 @@ const UserSchema = new Schema({
     lastName: String,
     age: Number,
 });
+UserSchema.pre("save", function (next) {
+    // this is our user
+    if (this.age > 14 && this.age < 60) next();
+    else next(Error("Age is not recommanded"));
+});
+UserSchema.post("save", async function (doc) {
+    // this is our user
+    try {
+        const users = await mongoose
+            .model("User")
+            .updateMany({ firstName: doc.firstName, lastName: doc.lastName }, { age: doc.age });
+    } catch (e) {
+        console.error(e);
+    }
+});
+
+UserSchema.methods.findSimilarAge = function () {
+    return mongoose.model("User").find({ age: this.age });
+};
 
 const User = mongoose.model("User", UserSchema);
 //
@@ -20,7 +39,7 @@ async function CreateUser(fn, lastName, age) {
         return user;
     } catch (e) {
         console.error(e);
-        return e;
+        return { error: e.message };
     }
 }
 // finding DATA
@@ -30,7 +49,7 @@ async function FindUsers() {
         return users;
     } catch (e) {
         console.error(e);
-        return e;
+        return { error: e.message };
     }
 }
 async function FindUser(id) {
@@ -39,17 +58,25 @@ async function FindUser(id) {
         return user;
     } catch (e) {
         console.error(e);
-        return e;
+        return { error: e.message };
     }
 }
-
+async function FindSimilarAge(id) {
+    try {
+        const user = await User.findById(id);
+        return await user.findSimilarAge();
+    } catch (e) {
+        console.error(e);
+        return { error: e.message };
+    }
+}
 async function FindUserbyFirstName(firstName) {
     try {
         const user = await User.findOne({ firstName });
         return user;
     } catch (e) {
         console.error(e);
-        return e;
+        return { error: e.message };
     }
 }
 async function FindUserbyAge(age) {
@@ -58,7 +85,7 @@ async function FindUserbyAge(age) {
         return user;
     } catch (e) {
         console.error(e);
-        return e;
+        return { error: e.message };
     }
 }
 
@@ -77,7 +104,7 @@ async function UpdateUserByID(_id, { age, firstName, LastName }) {
         return user;
     } catch (e) {
         console.error(e);
-        return e;
+        return { error: e.message };
     }
 }
 //delete data
@@ -91,7 +118,7 @@ async function DeleteUser(_id) {
         return "Deleted";
     } catch (e) {
         console.error(e);
-        return e;
+        return { error: e.message };
     }
 }
 async function CreateUserCB(fn, lastName, age, callback) {
@@ -114,4 +141,5 @@ module.exports = {
     FindUserbyAge,
     UpdateUserByID,
     DeleteUser,
+    FindSimilarAge,
 };

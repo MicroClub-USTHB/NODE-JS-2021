@@ -3,42 +3,13 @@ const mongoose = require("mongoose"),
     express = require("express"),
     app = express(),
     port = 3000,
-    User = require("./models/user");
+    User = require("./models/user"),
+    UserRouter = require("./routers/user");
 app.get("/", (req, res) => {
     res.send("Hi welcome to our website");
 });
-// http://localhost:3000/users/
-app.get("/users", async function (req, res) {
-    const users = await User.FindUsers();
-    res.send(users);
-});
-// http://localhost:3000/users/id/61018a2f0e66d83350f000c6
-app.get("/users/id/:id", async function (req, res) {
-    const users = await User.FindUser(req.params.id);
-    res.send(users);
-});
-// http://localhost:3000/users/Deleteid/6101881e736e830924bd1009
-app.get("/users/Deleteid/:id", async function (req, res) {
-    const msg = await User.DeleteUser(req.params.id);
-    res.send(msg);
-});
-// http://localhost:3000/users/UpdateId/61018a2f0e66d83350f000c6/25
-app.get("/users/UpdateId/:id/:age", async function (req, res) {
-    const user = await User.UpdateUserByID(req.params.id, {
-        age: Number(req.params.age),
-    });
-    res.send(user);
-});
-// http://localhost:3000/users/firstname/Youcef
-app.get("/users/firstname/:id", async function (req, res) {
-    const users = await User.FindUserbyFirstName(req.params.id);
-    res.send(users);
-});
-// http://localhost:3000/users/age/20
-app.get("/users/age/:id", async function (req, res) {
-    const users = await User.FindUserbyAge(req.params.id);
-    res.send(users);
-});
+app.use(UserRouter);
+//http://localhost:3000/Youcef/Madadi/23
 app.get("/:firstName/:lastName/:age", async (req, res) => {
     // async not needed in 2nd method
     const { firstName, lastName, age } = req.params;
