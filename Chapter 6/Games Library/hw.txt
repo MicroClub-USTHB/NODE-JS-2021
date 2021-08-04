@@ -1,0 +1,62 @@
+Database structure :
+GAME 
+name 
+developer 
+genre 
+release_date
+mode 
+platforms
+price  
+-------------------------------------
+Game name: Bloodborne.
+Developer: From Software, Japan Studio.
+Publisher: Sony Computer Entertainment.
+Director: Hidetaka Miyazaki.
+Release Date: 24/03/2015.
+Download size: 25.3GB.
+PG rating: PG16.
+Genre: Action, RPG.
+Platform: PlayStation 4.
+Metacritic’s metascore: 92/100.
+IGN rating: 9.1/10.
+GameSpot: 9/10.
+----------------------------------------
+Title
+Developper
+Publisher
+Release Date
+Rating
+About the game / synopsis
+Genre : (RPG / Roguelike ...)
+
+Minimum requirements
+    OS
+    Processor
+    Memory
+    Graphics
+    Storage
+Recommended requirements:
+    Same stuff
+--------------------------------------
+Game : hunt showdown 
+developers : crytek
+game engine :cryengine
+platform :pc , ps4, xbox one
+Metacritic : 81%
+Eurogamer : 4/5
+IGN :7.5/10
+steam rating : very positive
+price : 40$
+
+-------------------------------------
+- Le titre 
+- Le type d'activité (
+- Thème 
+- Public-cible
+- Nombre de participant
+- Nombre d'animateur(s)
+- Lieu
+- Matériel nécessaire
+- Durée de l'activité
+- But du jeu
+- Règles de sécurité

@@ -1,7 +1,7 @@
 const movieInfo = require("movie-info"),
     express = require("express"),
     app = express(),
-    port = 3000;
+    port = 3001;
 app.get("/", async (req, res) => {
     let movie = null;
     try {

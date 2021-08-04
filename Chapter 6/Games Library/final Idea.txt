@@ -1,0 +1,68 @@
+--------------------------------------------
+Game : 
+id: mongoDB 
+user: user_id
+Title : String
+release_date : Date
+Orignal_Language: String
+developer : String
+publisher : String
+game_engine : String
+platforms : [ String ] // example : windows , xbox ...
+required_age : Number 
+categories: [ String ]
+Genres : [ String ]
+description : String 
+media : {
+    cover : String 
+    trailers :[string ]
+    screenshots: [string]
+}
+requirements:[
+    {
+        OS : String
+        min: {
+            Processor :String
+            Memory:String // Number as MB
+            Graphics:String
+            Storage:String // Number as MB
+        }
+        Recommended: {
+            Processor :String
+            Memory:String // Number as MB
+            Graphics:String
+            Storage:String // Number as MB
+        }
+    }
+]
+website: String
+support:{
+    url: String 
+    email: String 
+}
+total_Rating: Number
+raters:Number
+
+---------------------------------------------------------
+User :
+id: mongodb
+username: String // unique
+first_Name: String
+last_Name: String
+email: String // unique
+is_Admin:Boolean
+// admin can have it published_games:[ ID ]
+passwords: String // mypassword -> edjsfuizsedbfgsedg;4156fd4hfd1hgfdfjhkvbdfsgbv,21;564df
+lists:[
+    {
+        name:String
+        games:[ game_ID ]
+    }
+]
+Rates:[
+    {
+        game_id: ID
+        rating: Number
+        comment: String
+    }
+]

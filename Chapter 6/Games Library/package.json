@@ -1,0 +1,15 @@
+{
+    "name": "games-library",
+    "version": "1.0.0",
+    "description": "We gonna make an api that helps people share their favorite games",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon ."
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.13.5"
+    }
+}
