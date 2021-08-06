@@ -1,0 +1,53 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Game Library",
+    "dateExported": "2021-08-06T12:23:05.430Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "containerId": "",
+            "sortNum": 10000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "list creating",
+            "url": "http://localhost:3000/list",
+            "method": "POST",
+            "modified": "2021-08-06T12:21:59.717Z",
+            "created": "2021-08-01T16:12:17.594Z",
+            "_id": "8b689b20-e43d-4e3f-8fe0-7311299adea9",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"user\":\"610d23d1f6d6662b50cb068e\",\n    \"name\":\"best games\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "",
+            "sortNum": 20000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "user creating",
+            "url": "http://localhost:3000/user",
+            "method": "POST",
+            "modified": "2021-08-06T12:22:06.388Z",
+            "created": "2021-08-01T16:13:20.557Z",
+            "_id": "f33b73bf-1ed5-453d-bab9-279721639b5e",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"youcefmadadimc@gmail.com\", \n    \"username\": \"ShiroYasha\", \n    \"first_Name\":\"Youcef\", \n    \"last_Name\": \"Madadi\", \n    \"passwords\":\"a password\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
