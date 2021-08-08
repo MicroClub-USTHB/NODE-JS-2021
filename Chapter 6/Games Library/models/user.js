@@ -9,6 +9,8 @@ let rateSchema = new mongoose.Schema({
     rating: {
         required: true,
         type: Number,
+        min: 1,
+        max: 10,
     },
     comment: {
         default: "",

@@ -1,50 +1,297 @@
 {
     "client": "Thunder Client",
     "collectionName": "Game Library",
-    "dateExported": "2021-08-06T12:23:05.430Z",
+    "dateExported": "2021-08-08T17:09:08.545Z",
     "version": "1.1",
-    "folders": [],
-    "requests": [
+    "folders": [
         {
             "containerId": "",
+            "sortNum": 10000,
+            "name": "Users request",
+            "_id": "9768072b-f902-444f-a64e-1dd6f5c2d39e",
+            "created": "2021-08-06T15:17:09.723Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 20000,
+            "name": "Lists Requests",
+            "_id": "9ddb03f7-dd6e-499e-8e80-c0ebcfba1e34",
+            "created": "2021-08-08T15:29:45.316Z"
+        },
+        {
+            "containerId": "",
+            "sortNum": 30000,
+            "name": "Game requests",
+            "_id": "e7e063f5-7aad-41c1-8b51-f94f0708072f",
+            "created": "2021-08-08T15:47:36.201Z"
+        }
+    ],
+    "requests": [
+        {
+            "containerId": "9ddb03f7-dd6e-499e-8e80-c0ebcfba1e34",
             "sortNum": 10000,
             "headers": [
                 { "name": "Accept", "value": "*/*" },
                 { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
             ],
             "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
-            "name": "list creating",
+            "name": "Creating list",
             "url": "http://localhost:3000/list",
             "method": "POST",
-            "modified": "2021-08-06T12:21:59.717Z",
+            "modified": "2021-08-08T15:32:18.284Z",
             "created": "2021-08-01T16:12:17.594Z",
             "_id": "8b689b20-e43d-4e3f-8fe0-7311299adea9",
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"user\":\"610d23d1f6d6662b50cb068e\",\n    \"name\":\"best games\"\n}",
+                "raw": "{\n    \"user\":\"610d23d1f6d6662b50cb068e\",\n    \"name\":\"my fav\",\n    \"public\":true\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "containerId": "",
-            "sortNum": 20000,
+            "containerId": "9768072b-f902-444f-a64e-1dd6f5c2d39e",
+            "sortNum": 10000,
             "headers": [
                 { "name": "Accept", "value": "*/*" },
                 { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
             ],
             "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
             "name": "user creating",
-            "url": "http://localhost:3000/user",
+            "url": "http://localhost:3000/users",
             "method": "POST",
-            "modified": "2021-08-06T12:22:06.388Z",
+            "modified": "2021-08-06T16:20:48.758Z",
             "created": "2021-08-01T16:13:20.557Z",
             "_id": "f33b73bf-1ed5-453d-bab9-279721639b5e",
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"email\": \"youcefmadadimc@gmail.com\", \n    \"username\": \"ShiroYasha\", \n    \"first_Name\":\"Youcef\", \n    \"last_Name\": \"Madadi\", \n    \"passwords\":\"a password\"\n}",
+                "raw": "{\n    \"email\": \"youcefmadadi2@gmail.com\", \n    \"username\": \"ShiroYasha2\", \n    \"first_Name\":\"Youcef\", \n    \"last_Name\": \"Madadi\", \n    \"passwords\":\"a password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "9768072b-f902-444f-a64e-1dd6f5c2d39e",
+            "sortNum": 20000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "update User",
+            "url": "http://localhost:3000/users/610d61605e9f172938dd1883",
+            "method": "PUT",
+            "modified": "2021-08-06T16:33:47.192Z",
+            "created": "2021-08-06T16:21:05.896Z",
+            "_id": "8db10a8f-18c5-4871-b844-6e247fd54e26",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"youcefmadgsdfgsadi2@gmail.com\", \n    \"username\": \"ShiroYasvsdgfdsha2\", \n \n    \"passwords\":\"not a pafdssword\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "9768072b-f902-444f-a64e-1dd6f5c2d39e",
+            "sortNum": 25000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "User To Admin",
+            "url": "http://localhost:3000/users/610d61605e9f172938dd1883/toAdmin",
+            "method": "PUT",
+            "modified": "2021-08-06T16:35:10.012Z",
+            "created": "2021-08-06T16:34:25.115Z",
+            "_id": "8c5b3afc-e357-4486-af29-d5690049cd2c",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "9768072b-f902-444f-a64e-1dd6f5c2d39e",
+            "sortNum": 30000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Show user",
+            "url": "http://localhost:3000/users/610d61605e9f172938dd1883",
+            "method": "GET",
+            "modified": "2021-08-06T16:21:38.297Z",
+            "created": "2021-08-06T16:21:22.516Z",
+            "_id": "db361332-c7f6-4bd5-8a5d-1de69dcb72e2",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "9ddb03f7-dd6e-499e-8e80-c0ebcfba1e34",
+            "sortNum": 40000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Show public lists",
+            "url": "http://localhost:3000/list",
+            "method": "GET",
+            "modified": "2021-08-08T15:31:26.121Z",
+            "created": "2021-08-08T15:31:14.132Z",
+            "_id": "07d1a795-bed7-4ed5-b1d0-b78366cbe2cc",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "9ddb03f7-dd6e-499e-8e80-c0ebcfba1e34",
+            "sortNum": 50000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Show specific lists ",
+            "url": "http://localhost:3000/list/610ff89eb31e774230375152",
+            "method": "GET",
+            "modified": "2021-08-08T15:35:06.217Z",
+            "created": "2021-08-08T15:32:48.251Z",
+            "_id": "71dfeed3-2557-43be-8114-ff41773188aa",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "9ddb03f7-dd6e-499e-8e80-c0ebcfba1e34",
+            "sortNum": 50000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Update list",
+            "url": "http://localhost:3000/list/610ff89eb31e774230375152",
+            "method": "PUT",
+            "modified": "2021-08-08T15:36:57.752Z",
+            "created": "2021-08-08T15:34:05.724Z",
+            "_id": "afa8d7bc-0b1d-4bdb-b41a-20fbba91d0a1",
+            "params": [],
+            "body": { "type": "json", "raw": "{\n    \"name\":\"BEST BEST Games\"\n}", "form": [] },
+            "tests": []
+        },
+        {
+            "containerId": "9ddb03f7-dd6e-499e-8e80-c0ebcfba1e34",
+            "sortNum": 60000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Delete a list",
+            "url": "http://localhost:3000/list/610ff89eb31e774230375152",
+            "method": "DELETE",
+            "modified": "2021-08-08T15:37:36.152Z",
+            "created": "2021-08-08T15:37:19.560Z",
+            "_id": "cbb35dad-f810-491a-9858-be315683783b",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "e7e063f5-7aad-41c1-8b51-f94f0708072f",
+            "sortNum": 60000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "create a game",
+            "url": "http://localhost:3000/game",
+            "method": "POST",
+            "modified": "2021-08-08T16:15:38.995Z",
+            "created": "2021-08-08T15:47:46.206Z",
+            "_id": "e2a0dc6c-503f-4fdd-be6c-5aff3d81b5a7",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"user\":\"610ff4cee9d7003f2804c27a\",\n    \"title\":\"Among Us\",\n    \"release_date\":\"15 June 2018\",\n    \"orignal_Language\":\"EN\",\n    \"developer\":\"InnerSloth LLC, PlayEveryWare\",\n    \"publisher\":\"Innersloth\",\n    \"game_engine\":\"UNITY 3D\",\n    \"platforms\":[\" PlayStation 4\", \"Microsoft Windows\", \"Android\", \"Nintendo Switch\", \"Xbox One\", \"iOS\", \"PlayStation 5\", \"Xbox Series X\" , \"Series S\"],\n    \"required_age\":9,\n    \"categories\":   \"Multiplayer\" ,\n    \"genres\": [\"Party\",\"social deduction\",\"Betrayal\"],\n    \"description\":\"Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. It was released on iOS and Android devices in June 2018 and on Windows in November 2018, featuring cross-platform play between these platforms\",\n    \"media\":{\n        \"cover\":\"https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Among_Us_cover_art.jpg/220px-Among_Us_cover_art.jpg\",\n        \"trailers\":[\n            \"https://www.youtube.com/watch?v=vlVeaz_l5Jg\", \n            \"https://www.youtube.com/watch?v=-LaY8nQyM_0\"\n            ]\n    },\n    \"requirements\":[\n        {\n            \"os\":\"Windows 7 SP1+\",\n            \"min\":{\n                \"Processor\": \"SSE2 instruction set support\",\n                \"Memory\": \"1 GB RAM\",\n                \"Graphics\":\"DirectX: Version 10\",\n                \"Storage\":\"250 MB available space\"\n            },\n            \"rec\":{\n                \"Processor\": \"Intel Core i3-2120\",\n                \"Memory\": \"2 GB RAM\",\n                \"Graphics\":\"NVIDIA GeForce GT 610\",\n                \"Storage\":\"1 GB available space\"\n            }\n        }\n    ],\n    \"website\":\"https://innersloth.com/gameAmongUs.php\",\n    \"support\":{\n        \"url\":\"https://innersloth.com/gameAmongUs.php\",\n        \"email\":\"privacy@innersloth.com\"\n    }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "e7e063f5-7aad-41c1-8b51-f94f0708072f",
+            "sortNum": 65000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Update a game",
+            "url": "http://localhost:3000/game/6110032a1d57140d3ca07c41",
+            "method": "PUT",
+            "modified": "2021-08-08T16:32:08.581Z",
+            "created": "2021-08-08T16:26:18.223Z",
+            "_id": "c092c821-bc6d-447e-b95b-f9745b82b311",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \n    \"required_age\":9\n    \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "containerId": "e7e063f5-7aad-41c1-8b51-f94f0708072f",
+            "sortNum": 70000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Games list",
+            "url": "http://localhost:3000/game",
+            "method": "GET",
+            "modified": "2021-08-08T16:17:53.001Z",
+            "created": "2021-08-08T16:17:45.389Z",
+            "_id": "7a795015-329a-4902-b8fb-c273df46dcd5",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "e7e063f5-7aad-41c1-8b51-f94f0708072f",
+            "sortNum": 80000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Specific Games ",
+            "url": "http://localhost:3000/game/6110032a1d57140d3ca07c41",
+            "method": "GET",
+            "modified": "2021-08-08T16:26:46.039Z",
+            "created": "2021-08-08T16:18:59.607Z",
+            "_id": "36c365e2-e71c-4a73-978c-3d326dadf9c3",
+            "params": [],
+            "tests": []
+        },
+        {
+            "containerId": "e7e063f5-7aad-41c1-8b51-f94f0708072f",
+            "sortNum": 80000,
+            "headers": [
+                { "name": "Accept", "value": "*/*" },
+                { "name": "User-Agent", "value": "Thunder Client (https://www.thunderclient.io)" }
+            ],
+            "colId": "2173670b-7e57-4f86-9b24-de06593999cd",
+            "name": "Rate a game",
+            "url": "http://localhost:3000/game/6110032a1d57140d3ca07c41/rate",
+            "method": "POST",
+            "modified": "2021-08-08T16:38:17.347Z",
+            "created": "2021-08-08T16:35:06.208Z",
+            "_id": "ec3cbb7d-4c69-4936-af8b-92060a9cdf22",
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"rater\":\"610d61605e9f172938dd1883\",\n    \"rating\":5,\n    \"comment\":\"This game makes me lie and i dont like it :/\"\n}",
                 "form": []
             },
             "tests": []

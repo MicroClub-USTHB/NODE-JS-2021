@@ -1,11 +1,14 @@
 const express = require("express"),
     app = express(),
     mongoose = require("mongoose"),
-    user = require("./models/user"),
     userRouter = require("./routes/user"),
+    gameRouter = require("./routes/game"),
+    listRouter = require("./routes/list"),
     port = 3000;
 app.use(express.json());
 app.use("/users", userRouter);
+app.use("/list", listRouter);
+app.use("/game", gameRouter);
 mongoose.set("debug", true); // in devolpment process
 mongoose
     .connect(

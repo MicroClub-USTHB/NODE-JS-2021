@@ -23,5 +23,6 @@ Show games list : GET to : /games // less details and able to be filtred
 Show specific game : GET to : /games/:id //full details
 Edit Game : PUT to : /games/:id // detailed
 delete Game : DELETE to : /games/:id
+
 Rating a game : POST to : /games/:id/rate // restricted only user
 Editing a rate : PUT to : /games/:id/rate // restricted only user

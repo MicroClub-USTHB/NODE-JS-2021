@@ -62,8 +62,8 @@ let specSChema = new mongoose.Schema({
                     required: true,
                     type: String,
                 },
-                trailers: [string],
-                screenshots: [string],
+                trailers: [String],
+                screenshots: [String],
             },
             requirements: [requirmentSchema],
             website: String,
@@ -76,4 +76,9 @@ let specSChema = new mongoose.Schema({
         },
         { timestamps: true }
     );
+gameSchema.methods.fixRating = function () {
+    let obj = this.toObject();
+    obj.rating = obj.total_Rating / obj.raters;
+    return obj;
+};
 module.exports = mongoose.model("game", gameSchema);
