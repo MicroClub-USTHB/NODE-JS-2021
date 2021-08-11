@@ -1,4 +1,5 @@
 const express = require("express"),
+    { isLoggedIn } = require("../middleware/auth"),
     {
         showPublicList,
         createList,
@@ -9,7 +10,7 @@ const express = require("express"),
     } = require("../middleware/list");
 router = express.Router();
 
-router.route("/").get(showPublicList).post(createList);
+router.route("/").get(showPublicList).post(isLoggedIn, createList);
 
 router.route("/:id").get(showSpecificList).put(updateList).delete(deleteList);
 

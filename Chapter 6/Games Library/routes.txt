@@ -7,7 +7,7 @@ Update user into an Admin : PUT to : /users/:id/toAdmin // must be secured
 
 list----------------------------------------
 
-Create : POST to : /list 
+Create : POST to : /list  // logged in
 Show public lists : GET to : /list
 Show a specific list : GET to : /list/:id
 Edit list Name or privacy : PUT to : /list/:id // restricted only user

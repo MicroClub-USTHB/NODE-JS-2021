@@ -10,8 +10,8 @@ module.exports = {
     },
     createList: async (req, res) => {
         try {
-            const { name, public, user } = req.body,
-                list = await List.create({ name, public, user });
+            const { name, public } = req.body,
+                list = await List.create({ name, public, user: req.user.id });
             res.json(list);
         } catch (e) {
             res.json({ error: e.message });
