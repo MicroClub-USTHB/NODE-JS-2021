@@ -4,7 +4,7 @@ module.exports = {
         const { email, username, first_Name, last_Name, password } = req.body;
         try {
             const user = await User.create({ email, username, first_Name, last_Name, password });
-            res.json(user.insertToken());
+            res.status(201).json(user.insertToken());
         } catch (e) {
             res.json({ error: e.message });
         }
@@ -16,7 +16,7 @@ module.exports = {
             if (!user) throw new Error("We didn't find any user with this username : " + username);
             if (!(await user.comparePasswords(password)))
                 throw Error("Wrong Password,Try again !!");
-            res.json(user.insertToken());
+            res.status(201).json(user.insertToken());
         } catch (e) {
             res.json({ error: e.message });
         }
@@ -34,12 +34,14 @@ module.exports = {
         const { first_Name, last_Name, passwords } = req.body,
             id = req.params.id;
         try {
+            if (id !== req.user._id)
+                throw new Error("You aren't allowed to edit other users profiles.");
             const u = await User.findById(id);
             u.first_Name = first_Name ? first_Name : u.first_Name;
             u.last_Name = last_Name ? last_Name : u.last_Name;
             u.passwords = passwords ? passwords : u.passwords;
             await u.save();
-            res.send(u);
+            res.status(201).send(u);
         } catch (e) {
             res.json({ error: e.message });
         }
@@ -51,7 +53,7 @@ module.exports = {
             u.is_Admin = true;
             await u.save();
             // add published games
-            res.send(u);
+            res.status(201).send(u);
         } catch (e) {
             res.json({ error: e.message });
         }

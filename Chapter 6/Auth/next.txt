@@ -1,0 +1,5 @@
+1- env variables
+2- login and logout
+3- Crypting and decrypting 
+4- using jwt to impliment auth (bearer-authentication)
+5- handeling errors

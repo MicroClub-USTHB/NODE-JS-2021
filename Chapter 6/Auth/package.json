@@ -1,0 +1,23 @@
+{
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.13.6",
+        "morgan": "^1.10.0"
+    },
+    "name": "auth",
+    "version": "1.0.0",
+    "main": "app.js",
+    "devDependencies": {
+        "dotenv": "^10.0.0"
+    },
+    "scripts": {
+        "test": "nodemon .",
+        "start": "node ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}

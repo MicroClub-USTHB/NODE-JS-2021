@@ -12,7 +12,7 @@ router = express.Router();
 
 router.route("/").get(showPublicList).post(isLoggedIn, createList);
 
-router.route("/:id").get(showSpecificList).put(updateList).delete(deleteList);
+router.route("/:id").get(showSpecificList).all(isLoggedIn).put(updateList).delete(deleteList);
 
-router.route("/:id/addGame ").put(addGameToList);
+router.route("/:id/addGame ").put(isLoggedIn, addGameToList);
 module.exports = router;
