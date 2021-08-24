@@ -1,0 +1,4 @@
+<%- include("layout/header") -%>
+<h1>Welcome to Our Games library</h1>
+<section><% games.forEach(game => {%> <%- include('parts/game',{game}); -%> <% } ); %></section>
+<%- include("layout/footer") -%>

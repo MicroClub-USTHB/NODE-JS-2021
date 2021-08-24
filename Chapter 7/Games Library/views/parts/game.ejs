@@ -1,0 +1,9 @@
+<div class="game" style="margin-bottom: 3em">
+    <a href="<%= game.media.trailers.length >0?game.media.trailers[0] : "#" %>">
+        <img src="<%=game.media.cover%>" alt="" />
+    </a>
+    <div>
+        <h2><%= game.title %></h2>
+        <p> <%= game.description.substr(0,50)%> <a href="/game/<%= game._id %>">read more...</a></p>
+    </div>
+</div>

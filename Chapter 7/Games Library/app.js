@@ -7,9 +7,15 @@ const express = require("express"),
     gameRouter = require("./routes/game"),
     authRouter = require("./routes/auth"),
     listRouter = require("./routes/list"),
-    port = process.env.PORT || 3000;
+    { gamesList } = require("./middleware/game");
+port = process.env.PORT || 3000;
+
+app.use("/public", express.static("public"));
 app.use(morgan("dev"));
 app.use(express.json());
+app.set("view engine", "ejs");
+
+app.get("/", gamesList);
 app.use("/", authRouter);
 app.use("/users", userRouter);
 app.use("/list", listRouter);
@@ -19,10 +25,10 @@ app.use("*", function (req, res, next) {
     res.json({ error: "this route doesn't exist" });
 });
 // Errors handler function
-app.use(function (err, req, res, next) {
+/*app.use(function (err, req, res, next) {
     console.error(err);
     res.status(err.status).json({ error: err.message });
-});
+});*/
 mongoose.set("debug", true); // in devolpment process
 mongoose
     .connect(process.env.DB_URL, {

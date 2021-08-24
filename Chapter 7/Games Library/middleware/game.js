@@ -12,7 +12,8 @@ module.exports = {
             if (req.query.skip && !Number.isNaN(req.query.skip))
                 gamesPromise.skip(Number(req.query.skip));
             const games = await gamesPromise;
-            res.json(games);
+
+            res.render("home", { games });
         } catch (e) {
             next({ message: e.message, status: 500 });
         }

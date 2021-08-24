@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: rgb(75, 5, 19);
+    width: 100%;
+    color: white;
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.game {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+.game img {
+    width: 90%;
+    margin: 0 auto;
+    transition: transform 300ms ease-in;
+}
+.game img:hover {
+    transform: scale(1.1);
+}
+.list {
+    padding: 5%;
+    border: 1px solid salmon;
+}

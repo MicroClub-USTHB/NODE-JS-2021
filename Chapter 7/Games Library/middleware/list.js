@@ -5,7 +5,7 @@ module.exports = {
             const lists = await List.find({ public: true })
                 .populate("user", "username")
                 .populate("games", "title release_date categories genres media");
-            res.json(lists);
+            res.render("list", { lists });
         } catch (e) {
             res.json({ error: e.message });
         }

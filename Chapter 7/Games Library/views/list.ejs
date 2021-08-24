@@ -1,0 +1,12 @@
+<%- include("layout/header") -%>
+<h1>Games lists</h1>
+<section>
+    <% lists.forEach(list => {%>
+    <div class="list">
+        <h2><%= list.name %></h2>
+        <h3><%= list.user?list.user.username:"Deleted" %></h3>
+        <img src="<%= list.games.length >0 ?list.games[0].media.cover :"#"%>" alt="">
+    </div>
+    <% } ); %>
+</section>
+<%- include("layout/footer") -%>
