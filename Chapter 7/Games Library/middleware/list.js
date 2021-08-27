@@ -1,6 +1,7 @@
 const List = require("../models/list");
 module.exports = {
     showPublicList: async (req, res) => {
+        res.locals.title = "Games lists";
         try {
             const lists = await List.find({ public: true })
                 .populate("user", "username")

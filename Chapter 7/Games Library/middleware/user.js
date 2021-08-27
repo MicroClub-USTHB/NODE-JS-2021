@@ -4,7 +4,8 @@ module.exports = {
         const { email, username, first_Name, last_Name, password } = req.body;
         try {
             const user = await User.create({ email, username, first_Name, last_Name, password });
-            res.status(201).json(user.insertToken());
+            res.cookie("token", user.insertToken().token, { expire: 360000 + Date.now() });
+            res.redirect("/");
         } catch (e) {
             res.json({ error: e.message });
         }
@@ -12,13 +13,16 @@ module.exports = {
     logUser: async (req, res) => {
         const { username, password } = req.body;
         try {
-            const user = await User.findOne({ username });
+            let user = await User.findOne({ username });
             if (!user) throw new Error("We didn't find any user with this username : " + username);
             if (!(await user.comparePasswords(password)))
                 throw Error("Wrong Password,Try again !!");
-            res.status(201).json(user.insertToken());
+            res.cookie("token", user.insertToken().token, {
+                expires: new Date(360000000 + Date.now()),
+            });
+            res.redirect("/");
         } catch (e) {
-            res.json({ error: e.message });
+            res.send(e.message);
         }
     },
     showUser: async (req, res) => {

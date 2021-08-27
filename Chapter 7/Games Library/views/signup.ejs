@@ -1,0 +1,14 @@
+<%- include("layout/header") -%>
+<h1>Login</h1>
+<form action="/signup" method="POST">
+    <div>
+        <label for="username">User Name</label>
+        <input type="text" name="username" placeholder="ShiroYasha" />
+    </div>
+    <input type="email" name="email" placeholder="youcefmadadi@gmail.com" />
+    <input type="text" name="first_Name" placeholder="Youcef" />
+    <input type="text" name="last_Name" placeholder="Madadi" />
+    <input type="password" name="password" placeholder="a password" />
+    <button type="submit">Login</button>
+</form>
+<%- include("layout/footer") -%>
