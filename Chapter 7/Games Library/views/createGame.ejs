@@ -1,0 +1,50 @@
+<%- include("layout/header") -%>
+<h1>Login</h1>
+<form action="/game" method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" name="title" value="Among Us" required />
+    </div>
+    <div>
+        <label for="release_date">Release Date</label>
+        <input type="datetime-local" name="release_date" required />
+    </div>
+    <div>
+        <label for="orignal_Language">Original Language</label>
+        <select type="text" name="orignal_Language" required>
+            <option value="EN" selected>EN</option>
+            <option value="FR">FR</option>
+            <option value="JP">JP</option>
+            <option value="AR">AR</option>
+            <option value="DU">DU</option>
+        </select>
+    </div>
+    <div>
+        <label for="developer">developer</label>
+        <input type="text" name="developer" value="InnerSloth LLC, PlayEveryWare" required />
+    </div>
+    <div>
+        <label for="publisher">publisher</label>
+        <input type="text" name="publisher" value="InnerSloth" required />
+    </div>
+    <div>
+        <label for="game_engine">Game Engine</label>
+        <input type="text" name="game_engine" value="UNITY 3D" required />
+    </div>
+    <div>
+        <label for="cover">Game Cover</label>
+        <input type="file" id="cover" name="media[cover]" required />
+    </div>
+    <div>
+        <label for="required_age">Required Age</label>
+        <input type="number" name="required_age" value="8" required />
+    </div>
+    <div>
+        <label for="description">description</label>
+        <textarea name="description" rows="5" cols="200" required>
+            description":"Among Us is a 2018 online multiplayer social deduction game developed and published by American game studio Innersloth. It was released on iOS and Android devices in June 2018 and on Windows in November 2018, featuring cross-platform play between these platforms
+        </textarea>
+    </div>
+    <button type="submit">add game</button>
+</form>
+<%- include("layout/footer") -%>

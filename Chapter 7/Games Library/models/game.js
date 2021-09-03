@@ -6,7 +6,7 @@ let specSChema = new mongoose.Schema({
         Graphics: String,
         Storage: String, // Number as MB
     }),
-    requirmentSchema = new mongoose.Schema({
+    requirementSchema = new mongoose.Schema({
         os: {
             required: true,
             type: String,
@@ -22,6 +22,7 @@ let specSChema = new mongoose.Schema({
             user: {
                 type: mongoose.Types.ObjectId,
                 ref: "user",
+                required: true,
             },
             title: {
                 required: true,
@@ -65,7 +66,7 @@ let specSChema = new mongoose.Schema({
                 trailers: [String],
                 screenshots: [String],
             },
-            requirements: [requirmentSchema],
+            requirements: [requirementSchema],
             website: String,
             support: {
                 url: String,

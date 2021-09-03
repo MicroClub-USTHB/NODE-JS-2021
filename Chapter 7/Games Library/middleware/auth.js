@@ -18,7 +18,7 @@ module.exports = {
         else return res.status(401).send(req.AuthError);
     },
     isAdmin: async function (req, res, next) {
-        if (!req.user.isAdmin) return res.status(403).send("user is not an Admin");
+        if (!req.user.is_Admin) return res.status(403).send("user is not an Admin");
         next();
     },
 };

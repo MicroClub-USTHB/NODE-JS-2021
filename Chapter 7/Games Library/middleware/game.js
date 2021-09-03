@@ -1,16 +1,33 @@
 const Game = require("../models/game"),
-    User = require("../models/user");
+    path = require("path"),
+    multer = require("multer"),
+    upload = multer({
+        storage: multer.diskStorage({
+            destination: function (req, file, cb) {
+                // if path.extname(file.originalname) === ".mp4"
+                cb(null, "./public/files");
+            },
+            filename: function (req, file, cb) {
+                cb(null, "file" + Date.now() + path.extname(file.originalname));
+            },
+        }),
+    });
 
 module.exports = {
+    createGameR: async (req, res, next) => {
+        try {
+            res.render("createGame");
+        } catch (e) {
+            next({ message: e.message, status: 500 });
+        }
+    },
     gamesList: async (req, res, next) => {
         try {
             const gamesPromise = Game.find({}).populate("user", "username");
             if (req.query.sort) gamesPromise.sort(req.query.sort);
             if (req.query.select) gamesPromise.select(req.query.select);
-            if (req.query.limit && !Number.isNaN(req.query.limit))
-                gamesPromise.limit(Number(req.query.limit));
-            if (req.query.skip && !Number.isNaN(req.query.skip))
-                gamesPromise.skip(Number(req.query.skip));
+            if (req.query.limit && !Number.isNaN(req.query.limit)) gamesPromise.limit(Number(req.query.limit));
+            if (req.query.skip && !Number.isNaN(req.query.skip)) gamesPromise.skip(Number(req.query.skip));
             const games = await gamesPromise;
 
             res.render("home", { games });
@@ -18,49 +35,23 @@ module.exports = {
             next({ message: e.message, status: 500 });
         }
     },
-    createGame: async (req, res) => {
-        try {
-            const {
-                    title,
-                    release_date,
-                    orignal_Language,
-                    developer,
-                    publisher,
-                    game_engine,
-                    platforms,
-                    required_age,
-                    categories,
-                    genres,
-                    description,
-                    media,
-                    requirements,
-                    website,
-                    support,
-                } = req.body,
-                game = await Game.create({
+    createGame: (req, res, next) => {
+        upload.single("media[cover]")(req, res, async (err) => {
+            try {
+                if (err) throw err;
+                console.log(req.body, req.file.filename);
+                await Game.create({
+                    ...req.body,
+                    media: { ...req.body.media, cover: "/public/files/" + req.file.filename },
                     user: req.user._id,
-                    title,
-                    release_date,
-                    orignal_Language,
-                    developer,
-                    publisher,
-                    game_engine,
-                    platforms,
-                    required_age,
-                    categories,
-                    genres,
-                    description,
-                    media,
-                    requirements,
-                    website,
-                    support,
                 });
-            res.json(game);
-        } catch (e) {
-            next({ message: e.message, status: 500 });
-        }
+                res.redirect("/game");
+            } catch (e) {
+                next({ message: e.message, status: 500 });
+            }
+        });
     },
-    showSpecificGame: async (req, res) => {
+    showSpecificGame: async (req, res, next) => {
         try {
             const id = req.params.id,
                 game = await Game.findById(id).populate("user", "username");
@@ -109,12 +100,11 @@ module.exports = {
             next({ message: e.message, status: 500 });
         }
     },
-    deleteGame: async (req, res) => {
+    deleteGame: async (req, res, next) => {
         try {
             const id = req.params.id,
                 game = await Game.findById(id);
-            if (!req.user._id.equals(list.user))
-                throw Error("You aren't allowed to delete other people games.");
+            if (!req.user._id.equals(list.user)) throw Error("You aren't allowed to delete other people games.");
             await game.remove();
             res.json({ deleted: "successfully" });
         } catch (e) {
@@ -122,7 +112,7 @@ module.exports = {
         }
     },
 
-    rateGame: async (req, res) => {
+    rateGame: async (req, res, next) => {
         try {
             const { rating, comment } = req.body,
                 id = req.params.id,
@@ -142,7 +132,7 @@ module.exports = {
             res.json({ error: e.message });
         }
     },
-    editRate: async (req, res) => {
+    editRate: async (req, res, next) => {
         try {
             const { rating, comment } = req.body,
                 id = req.params.id,
